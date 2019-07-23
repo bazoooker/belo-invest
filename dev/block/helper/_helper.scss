@@ -1,0 +1,201 @@
+.inner-page {
+	.hero {}
+	.header {}
+
+	h1 {
+		margin: 40px 0 45px 0;
+	}
+}
+
+.h-hover-zoom {
+	transition: 450ms;
+	&:hover {
+		transform: scale(1.06) !important;
+	}
+}
+
+.hideme {
+	opacity: 0;
+	// transform: translateX(-15px);
+	transition: 700ms !important;
+}
+.del200 	{transition-delay: 200ms !important;}
+.del400 	{transition-delay: 400ms !important;}
+.del600 	{transition-delay: 500ms !important;}
+.del800 	{transition-delay: 600ms !important;}
+.del1000 {transition-delay: 1000ms !important;}
+.del1200 {transition-delay: 1200ms !important;}
+.del1400 {transition-delay: 1400ms !important;}
+.del1600 {transition-delay: 1600ms !important;}
+
+.hideme_up {
+	transform: translateY(45px);
+}
+.hideme_left {
+	transform: translateX(-45px);
+}
+.hideme_right {
+	transform: translateX(45px);
+}
+.hideme_down {
+	transform: translateY(-45px);
+}
+
+.hideme_visible {
+	// transition-delay: 3000ms;
+	transform: none !important;
+	opacity: 1;
+}
+
+.h-big-wave-deco {
+	position: relative;
+	width: 100%;
+	&::before {
+		@include pseudo;
+		width: 100%;
+		height: 100vw;
+		top: -15vw;
+		left: 0;
+		background-image: url(/img/bg/3-numbers/bg-nums-wave.svg);
+		background-size: contain;
+		background-position: top center;
+		background-repeat: no-repeat;
+		z-index: -10;
+	}
+}
+
+.h-bg-footer {
+	background-image: url(/img/bg/11-gallery/bg-gallery.svg);
+	background-size: contain;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+
+
+
+.h-no-scroll {
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+
+
+.h-bg-bigwave {
+	position: relative;
+	&::before {
+		@include pseudo;
+		left: 0;
+		top: 0;
+		height: 1800px;
+		width: 100%;
+		background-image: url(/img/bg/6-advant/bg-big-wave_in-advant.png);
+		@include bg-cover;
+		z-index: -5;
+	}
+	&_left::before {}
+	&_right::before {transform: rotateY(180deg);}
+}
+
+
+
+
+
+
+.h-stats-bg {
+	position: relative;
+	&__one {
+		position: absolute;
+	    width: 95vw;
+	    height: 95vh;
+	    left: -46vw;
+	    top: 5vh;
+	    z-index: -1;
+		background-image: url(/img/bg/5-stats/bg-stats-1.png);
+		@include bg-contain;
+	}
+	&__two {
+		position: absolute;
+	    width: 100vw;
+	    height: 100vh;
+	    left: -42vw;
+	    top: 8vh;
+	    z-index: -2;
+		background-image: url(/img/bg/5-stats/bg-stats-2.png);
+		@include bg-contain;
+	}
+}
+
+.img-resp {
+	width: 100%;
+	height: auto;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.mb-0 	{margin-bottom: 0 !important;}
+.mb-1 	{margin-bottom: 1rem !important;}
+.mb-2 	{margin-bottom: 2rem !important;}
+.mb-3 	{margin-bottom: 3rem !important;}
+.mb-4 	{margin-bottom: 4rem !important;}
+.mb-6 	{margin-bottom: 6rem !important;}
+.mb-8 	{margin-bottom: 8rem !important;}
+.mb-10 {margin-bottom: 10rem !important;}
+.mb-13 {margin-bottom: 13rem !important;}
+.mb-20 {margin-bottom: 20rem !important;}
+
+// .pb-40 {padding-bottom: 40px !important;}
+// .pb-140 {padding-bottom: 140px !important;}
+
+	@media screen and (max-width: 1200px) {
+    	.hidden-to-xl {
+    		display: none !important;
+    	}
+    }
+    @media screen and (max-width: 992px) {
+    	.hidden-to-lg {
+    		display: none !important;
+    	}
+    }
+    @media screen and (max-width: 768px) {
+    	.hidden-to-md {
+    		display: none !important;
+    	}
+    	.h-md-hide-br {
+    		br {
+    			display: none;
+    		}
+    	}
+		.mb-3 	{margin-bottom: 2rem !important;}
+		.mb-4 	{margin-bottom: 3rem !important;}
+		.mb-6 	{margin-bottom: 4rem !important;}
+		.mb-8 	{margin-bottom: 6rem !important;}
+		.mb-10 {margin-bottom: 8rem !important;}
+		.mb-13 {margin-bottom: 10.5rem !important;}
+		.mb-20 {margin-bottom: 16rem !important;}
+		// .pb-14 {padding-bottom: 10rem !important;}
+    }
+    @media screen and (max-width: 568px) {
+		// .mb-20 	{margin-bottom: 10px !important;}
+		.mb-3 	{margin-bottom: 2rem !important;}
+		.mb-4 	{margin-bottom: 2.5rem !important;}
+		.mb-6 	{margin-bottom: 3.5rem !important;}
+		.mb-8 	{margin-bottom: 4.5rem !important;}
+		.mb-10 {margin-bottom: 6rem !important;}
+		.mb-13 {margin-bottom: 7.5rem !important;}
+		.mb-20 {margin-bottom: 13.5rem !important;}
+    }
+    @media screen and (max-width: 413px) {
+		.mb-3 	{margin-bottom: 1.5rem !important;}
+		.mb-4 	{margin-bottom: 2rem !important;}
+		.mb-6 	{margin-bottom: 3rem !important;}
+		.mb-8 	{margin-bottom: 4rem !important;}
+		.mb-1 {margin-bottom: 5rem !important;}
+		.mb-13 {margin-bottom: 6rem !important;}
+		.mb-20 {margin-bottom: 10rem !important;}
+    }
