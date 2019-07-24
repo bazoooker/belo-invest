@@ -23,7 +23,7 @@
                         $('.sidebar').removeClass('sidebar_black sidebar_bg');
                         break;
                     case 1:
-                        $('.header').addClass('header_black');
+                        $('.header').addClass('header_white').removeClass('header_black');
                         $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
                         $('.counter').each(function() {
                           var $this = $(this),
@@ -50,23 +50,23 @@
                         });
                         break;
                     case 2:
-                        $('.header').addClass('header_black');
+                        $('.header').addClass('header_black').removeClass('header_white');
                         $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
                         break;
                     case 3:
-                        $('.header').addClass('header_black');
+                        $('.header').addClass('header_black').removeClass('header_white');
                         $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
                         break;
                     case 4:
-                        $('.header').addClass('header_black');
-                        $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
+                        $('.header').addClass('header_white').removeClass('header_black');
+                        // $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
                         break;
                     case 5:
-                        $('.header').addClass('header_black');
-                        $('.sidebar').addClass('sidebar_black sidebar_bg');
+                        $('.header').addClass('header_white').removeClass('header_black');
+                        // $('.sidebar').addClass('sidebar_black sidebar_bg');
                         break;
                     case 6:
-                        $('.header').removeClass('header_black');
+                        $('.header').removeClass('header_black').removeClass('header_white');
                         $('.sidebar').removeClass('sidebar_black sidebar_bg');
                         break;
                     case 7:
@@ -109,163 +109,14 @@ $(window).scroll(function() {
 
 
 $(document).ready(function(){
-    setTimeout(function() {
-        $('.preloader').addClass('preloader_hidden');
-    }, 1000);
+    // setTimeout(function() {
+    //     $('.preloader').addClass('preloader_hidden');
+    // }, 1000);
     
-    const tilt = $('.js-tilt').tilt({
-        perspective:    200,   // Transform perspective, the lower the more extreme the tilt get
-    });
-    const tiltMap = $('.js-tilt-map').tilt({
-        maxTilt:        10,
-        perspective:    1000,   // Transform perspective, the lower the more extreme the tilt gets.
-        easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
-        scale:          1,      // 2 = 200%, 1.5 = 150%, etc..
-        speed:          300,    // Speed of the enter/exit transition.
-        transition:     true,   // Set a transition on enter/exit.
-        disableAxis:    null,   // What axis should be disabled. Can be X or Y.
-        reset:          true,   // If the tilt effect has to be reset on exit.
-        glare:          false,  // Enables glare effect
-        maxGlare:       1       // From 0 - 1.
-    });
 
     $('.content-slide').eq(0).find('.hideme').addClass('hideme_visible');
 
-    $('.js-city-change').on('click', function() {
-        $('.user-options__city').addClass('user-options__city_active');
-        $('.user-options__city-list').addClass('user-options__city-list_active');
-        $('.overlay_transparent.js-close-city-change').fadeIn(200);
-        $('.menu__btn-close').hide();
-    });
 
-    $('.js-close-city-change').on('click', function() {
-        $('.user-options__city').removeClass('user-options__city_active');
-        $('.user-options__city-list').removeClass('user-options__city-list_active');
-        $('.overlay_transparent.js-close-city-change').fadeOut(200);
-        setTimeout(function() {
-            $('.menu__btn-close').show(700);
-        },500);   
-    });
-
-    $('.js-city-inject').on('click', function(){
-        var thisCity = $(this).html();
-        var thisCityLength = $(this).html().length;
-
-        if(thisCityLength>7) {
-            var maxLength = 7;
-            var thisCity = (thisCity.substring(0, maxLength)) + ' ...';
-        }
-
-
-        // console.log(trimmedString);
-        $('.js-city-holder').html(thisCity);
-
-        $('.user-options__city').removeClass('user-options__city_active');
-        $('.user-options__city-list').removeClass('user-options__city-list_active');
-        $('.overlay_transparent.js-close-city-change').fadeOut(200);
-        setTimeout(function() {
-            $('.menu__btn-close').show(700);
-        },500);  
-    });
-
-
-    // var swiperContent = new Swiper('.js-content-slider', {
-    //     slidesPerView: 'auto',
-    //   direction: 'vertical',
-    //   pagination: {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    //   },
-    //   mousewheel: true,
-    //   on: {
-    //     slideChangeTransitionStart: function () {           
-
-    //         if (swiperContent.isEnd == false) {
-    //             anime({
-    //               targets: '.sidebar',
-    //               translateY: 0,
-    //               easing: 'linear',
-    //               duration: 100
-    //             });
-    //             $('.header').removeClass('header_last-section');
-    //             switch (swiperContent.activeIndex) {
-    //                 case 0:
-    //                     $('.header').removeClass('header_black');
-    //                     $('.sidebar').removeClass('sidebar_black sidebar_bg');
-    //                     break;
-    //                 case 1:
-    //                     $('.header').addClass('header_black');
-    //                     $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-    //                     $('.counter').each(function() {
-    //                       var $this = $(this),
-    //                           countTo = $this.attr('data-count');
-    //                       $({ countNum: $this.text()}).animate({
-    //                         countNum: countTo
-    //                       },
-    //                       {
-    //                         duration: 1200,
-    //                         easing:'swing',
-    //                         step: function() {
-    //                           $this.text(Math.floor(this.countNum));
-    //                         },
-    //                         complete: function() {
-    //                           $this.text(this.countNum);
-    //                           anime({
-    //                               targets: '.counter',
-    //                               translateY: '-12px',
-    //                               delay: anime.stagger(200) // increase delay by 100ms for each elements.
-    //                             });
-    //                         }
-
-    //                       });  
-    //                     });
-    //                     break;
-    //                 case 2:
-    //                     $('.header').addClass('header_black');
-    //                     $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-    //                     break;
-    //                 case 3:
-    //                     $('.header').addClass('header_black');
-    //                     $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-    //                     break;
-    //                 case 4:
-    //                     $('.header').addClass('header_black');
-    //                     $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-    //                     break;
-    //                 case 5:
-    //                     $('.header').addClass('header_black');
-    //                     $('.sidebar').addClass('sidebar_black sidebar_bg');
-    //                     break;
-    //                 case 6:
-    //                     $('.header').removeClass('header_black');
-    //                     $('.sidebar').removeClass('sidebar_black sidebar_bg');
-    //                     break;
-    //                 case 7:
-    //                     $('.header').addClass('header_black');
-    //                     $('.sidebar').addClass('sidebar_black');
-    //                     break;
-    //                 default:;
-    //             }
-    //         } else {
-    //             $('.header').addClass('header_last-section');
-    //             var footerHeight = $('.footer').height();
-    //             anime({
-    //               targets: '.sidebar',
-    //               translateY: -(footerHeight),
-    //               easing: 'linear',
-    //               duration: 100
-    //             });
-    //         }
-    //     },
-    //     slideChange: function() {
-    //         $('.sidebar__num').removeClass('sidebar__num_active');
-    //         $('.sidebar__num').eq(swiperContent.activeIndex).addClass('sidebar__num_active');
-
-    //         var ggg = $('.content-slider .content-slide').eq(swiperContent.activeIndex);
-    //         var yyy = $(ggg).find('.hideme').addClass('hideme_visible');
-    //     }
-    //   }
-    // });
 
 
     $('.js-slide-to-section').click(function() {
@@ -296,6 +147,21 @@ $(document).ready(function(){
             // $('.sidebar__num').eq(swiperContent.activeIndex).addClass('sidebar__num_active');
         },
       }
+    });
+
+
+
+    var swiperOne = new Swiper('.slider-one', {
+      navigation: {
+        nextEl: '.slider-one .swiper-button-next',
+        prevEl: '.slider-one .swiper-button-prev',
+      },
+    });
+    var swiperTwo = new Swiper('.slider-two', {
+      navigation: {
+        nextEl: '.slider-two .swiper-button-next',
+        prevEl: '.slider-two .swiper-button-prev',
+      },
     });
 
 
@@ -339,25 +205,7 @@ $(document).ready(function(){
         // сайт плагина: 
         // ionden.com/a/plugins/ion.rangeSlider/api.html
 
-        $(".js-range-slider").ionRangeSlider({
-            skin: "round",
-            type: "double",
-            min: 1000,
-            max: 50000,
-            from: 10000,
-            to: 40000,
-            hide_min_max: true,
-            onChange: function(data) {
-                $('.filter-price__min').val(data.from);
-                $('.filter-price__max').val(data.to);
-            }
-        });
 
-
-
-
-
-        $('select').niceSelect();
 
 
 

@@ -90,6 +90,15 @@
 	}
 }
 
+.link-phone {
+	font-size: 35px;
+	color: white;
+	transition: 300ms;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 @media screen and (max-width: 992px) {
 	.link_footer {
 		font-size: 2.4rem;
