@@ -7999,23 +7999,24 @@ input.btn_main:visited:active {
   height: 100%;
   left: 0;
   top: 0;
-  background: #FFFFFF;
-  background: -webkit-linear-gradient(top left, #FFFFFF, #B3B3B3);
-  background: -webkit-gradient(linear, left top, right bottom, from(#FFFFFF), to(#B3B3B3));
-  background: -o-linear-gradient(top left, #FFFFFF, #B3B3B3);
-  background: linear-gradient(to bottom right, #FFFFFF, #B3B3B3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#8ce2fc), to(#30b3dc));
+  background: -webkit-linear-gradient(top, #8ce2fc 0%, #30b3dc 100%);
+  background: -o-linear-gradient(top, #8ce2fc 0%, #30b3dc 100%);
+  background: linear-gradient(180deg, #8ce2fc 0%, #30b3dc 100%);
   z-index: 9999; }
-  .preloader::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: -webkit-linear-gradient(117.79deg, #FF3A3A 24.54%, #ff993a 73.65%, #FFDAAE 94.53%);
-    background: -o-linear-gradient(117.79deg, #FF3A3A 24.54%, #ff993a 73.65%, #FFDAAE 94.53%);
-    background: linear-gradient(332.21deg, #FF3A3A 24.54%, #ff993a 73.65%, #FFDAAE 94.53%);
-    z-index: 1000; }
   .preloader.preloader_hidden {
     -webkit-transition: 500ms;
     -o-transition: 500ms;
@@ -8032,114 +8033,59 @@ input.btn_main:visited:active {
     -o-transition-delay: 400ms;
     transition-delay: 400ms;
     height: 0; }
-  .preloader.preloader_hidden #cube-loader {
-    -webkit-transition-delay: 300ms;
-    -o-transition-delay: 300ms;
-    transition-delay: 300ms;
-    -webkit-transition: 500ms;
-    -o-transition: 500ms;
-    transition: 500ms;
-    top: 25%;
-    opacity: 0;
-    pointer-events: none; }
 
-#cube-loader {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100px;
-  width: 100px;
+.preloader__logo {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: inline-block;
+  background-image: url(/img/logo.png);
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.preloader__spinner {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 9999; }
-  #cube-loader .cube-loader {
-    width: 73px;
-    height: 73px;
-    margin: 0 auto;
-    margin-top: 49px;
-    position: relative;
-    -webkit-transform: rotateZ(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotateZ(45deg); }
-    #cube-loader .cube-loader .cube {
-      position: relative;
-      -webkit-transform: rotateZ(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotateZ(45deg);
-      width: 50%;
-      height: 50%;
-      float: left;
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1); }
-    #cube-loader .cube-loader .cube:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #373435;
-      -webkit-animation: cube-loader 2.76s infinite linear both;
-      animation: cube-loader 2.76s infinite linear both;
-      -webkit-transform-origin: 100% 100%;
-      -ms-transform-origin: 100% 100%;
-      transform-origin: 100% 100%; }
-    #cube-loader .cube-loader .loader-2 {
-      -webkit-transform: scale(1.1) rotateZ(90deg);
-      -ms-transform: scale(1.1) rotate(90deg);
-      transform: scale(1.1) rotateZ(90deg); }
-    #cube-loader .cube-loader .loader-3 {
-      -webkit-transform: scale(1.1) rotateZ(180deg);
-      -ms-transform: scale(1.1) rotate(180deg);
-      transform: scale(1.1) rotateZ(180deg); }
-    #cube-loader .cube-loader .loader-4 {
-      -webkit-transform: scale(1.1) rotateZ(270deg);
-      -ms-transform: scale(1.1) rotate(270deg);
-      transform: scale(1.1) rotateZ(270deg); }
-    #cube-loader .cube-loader .loader-2:before {
-      -webkit-animation-delay: 0.35s;
-      animation-delay: 0.35s; }
-    #cube-loader .cube-loader .loader-3:before {
-      -webkit-animation-delay: 0.69s;
-      animation-delay: 0.69s; }
-    #cube-loader .cube-loader .loader-4:before {
-      -webkit-animation-delay: 1.04s;
-      animation-delay: 1.04s; }
+  content: '';
+  bottom: 0px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0; }
+  .preloader__spinner:nth-child(1) {
+    -webkit-animation: spinner 1s infinite linear;
+    animation: spinner 1s infinite linear; }
+  .preloader__spinner:nth-child(2) {
+    -webkit-animation: spinner 1s infinite linear;
+    animation: spinner 1s infinite linear;
+    -webkit-animation-delay: 350ms;
+    animation-delay: 350ms; }
+  .preloader__spinner:nth-child(3) {
+    -webkit-animation: spinner 1s infinite linear;
+    animation: spinner 1s infinite linear;
+    -webkit-animation-delay: 700ms;
+    animation-delay: 700ms; }
 
-@-webkit-keyframes cube-loader {
-  0%, 10% {
-    -webkit-transform: perspective(136px) rotateX(-180deg);
-    transform: perspective(136px) rotateX(-180deg);
-    opacity: 0; }
-  25%, 75% {
-    -webkit-transform: perspective(136px) rotateX(0deg);
-    transform: perspective(136px) rotateX(0deg);
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
     opacity: 1; }
-  90%, 100% {
-    -webkit-transform: perspective(136px) rotateY(180deg);
-    transform: perspective(136px) rotateY(180deg);
+  100% {
+    -webkit-transform: translateX(135px);
+    transform: translateX(135px);
     opacity: 0; } }
 
-@keyframes cube-loader {
-  0%, 10% {
-    -webkit-transform: perspective(136px) rotateX(-180deg);
-    transform: perspective(136px) rotateX(-180deg);
-    opacity: 0; }
-  25%, 75% {
-    -webkit-transform: perspective(136px) rotateX(0deg);
-    transform: perspective(136px) rotateX(0deg);
+@keyframes spinner {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
     opacity: 1; }
-  90%, 100% {
-    -webkit-transform: perspective(136px) rotateY(180deg);
-    transform: perspective(136px) rotateY(180deg);
+  100% {
+    -webkit-transform: translateX(135px);
+    transform: translateX(135px);
     opacity: 0; } }
 
 .sidebar {

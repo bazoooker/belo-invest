@@ -56,21 +56,23 @@
 
     <body class="wrapper">
 
-                <!-- <div class="preloader">
-                    <div id="cube-loader">
-                        <div class="caption">
-                          <div class="cube-loader">
-                            <div class="cube loader-1"></div>
-                            <div class="cube loader-2"></div>
-                            <div class="cube loader-4"></div>
-                            <div class="cube loader-3"></div>
-                          </div>
-                        </div>
-                      </div>
-                </div> -->
-
-
-            
+        <div class="preloader">
+            <span class="preloader__logo">
+                <i class="preloader__spinner"></i>
+                <i class="preloader__spinner"></i>
+                <i class="preloader__spinner"></i>
+            </span>
+            <!-- <div id="cube-loader">
+                <div class="caption">
+                    <div class="cube-loader">
+                        <div class="cube loader-1"></div>
+                        <div class="cube loader-2"></div>
+                        <div class="cube loader-4"></div>
+                        <div class="cube loader-3"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
 
         <header class="header">
             <a href="" class="logo"></a>
@@ -430,8 +432,11 @@
 
 
 
-        <!-- <div class="overlay overlay_transparent js-close-city-change"></div> -->
-        <div class="overlay overlay_blur js-close-menu-sidebar"></div><!--оверлей для закрытия выбора города при клике по окну вне выпадашки городов-->
+        <div class="overlay overlay_blur js-close-menu-sidebar"></div>
+        <div class="pagination">
+            <span id="pagination__cur"></span>
+            <span id="pagination__total"></span>
+        </div>
 
 
 

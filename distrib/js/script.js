@@ -109,9 +109,9 @@ $(window).scroll(function() {
 
 
 $(document).ready(function(){
-    // setTimeout(function() {
-    //     $('.preloader').addClass('preloader_hidden');
-    // }, 1000);
+    setTimeout(function() {
+        $('.preloader').addClass('preloader_hidden');
+    }, 1000);
     
     $('.js-show-menu-lvl-2').click(function() {
         var categoryInMenu = $(this).data('menu-lvl-2');
