@@ -33,7 +33,7 @@
 .hideme {
 	opacity: 0;
 	// transform: translateX(-15px);
-	transition: 700ms !important;
+	transition: 500ms !important;
 }
 .del200 	{transition-delay: 200ms !important;}
 .del400 	{transition-delay: 400ms !important;}
@@ -191,16 +191,50 @@
 	padding: 40px;
 	&.pos-right {margin-left: auto;}
 	&.pos-left {margin-right: auto;}
-	&.slider {
+	&.slider-holder {
+		position: relative;
 		padding: 0;
 		align-self: flex-end;
 		height: 291px;
-	}
-	
-	.slider {
-		// background: red;
-		width: 100%;
-		height: 100%;
+		.swiper-button-next {
+			position: absolute;
+			@include flex-row(nowrap,center,center);
+			margin-top:0;
+			width: 52px;
+			height: 52px;
+			top: -52px;
+			right: 0;
+			background: #00b787;
+			transition: 400ms;
+			i {color: #fff;transition: 800ms;}
+			&:hover {
+				// i {transform: translateX(3px);}
+				background: #b4efe0;
+				i {	color: black; }
+			}
+		}
+		.swiper-button-prev {
+			position: absolute;
+			margin-top:0;
+			width: 52px;
+			@include flex-row(nowrap,center,center);
+			height: 52px;
+			top: -52px;
+			right: 53px;
+			left: auto;
+			background: #00b787;
+			transition: 400ms;
+			i {color: #fff;transition: 800ms;}
+			&:hover {
+				// i {transform: translateX(3px);}
+				background: #b4efe0;
+				i {	color: black; }
+			}
+		}
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	h2,h3,h4,h5,h6 {color: $color_main;}

@@ -25,29 +25,6 @@
                     case 1:
                         $('.header').addClass('header_white').removeClass('header_black');
                         $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-                        $('.counter').each(function() {
-                          var $this = $(this),
-                              countTo = $this.attr('data-count');
-                          $({ countNum: $this.text()}).animate({
-                            countNum: countTo
-                          },
-                          {
-                            duration: 1200,
-                            easing:'swing',
-                            step: function() {
-                              $this.text(Math.floor(this.countNum));
-                            },
-                            complete: function() {
-                              $this.text(this.countNum);
-                              anime({
-                                  targets: '.counter',
-                                  translateY: '-12px',
-                                  delay: anime.stagger(200) // increase delay by 100ms for each elements.
-                                });
-                            }
-
-                          });  
-                        });
                         break;
                     case 2:
                         $('.header').addClass('header_black').removeClass('header_white');
@@ -56,6 +33,29 @@
                     case 3:
                         $('.header').addClass('header_black').removeClass('header_white');
                         $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
+                        $('.counter').each(function() {
+                          var $this = $(this),
+                              countTo = $this.attr('data-count');
+                          $({ countNum: $this.text()}).animate({
+                            countNum: countTo
+                          },
+                          {
+                            duration: 1500,
+                            easing:'swing',
+                            step: function() {
+                              $this.text(Math.floor(this.countNum));
+                            },
+                            complete: function() {
+                              $this.text(this.countNum);
+                              anime({
+                                  targets: '.counter',
+                                  translateY: '-18px',
+                                  delay: anime.stagger(200) // increase delay by 100ms for each elements.
+                                });
+                            }
+
+                          });  
+                        });
                         break;
                     case 4:
                         $('.header').addClass('header_white').removeClass('header_black');
@@ -87,8 +87,8 @@
             }
         },
         slideChange: function() {
-            $('.sidebar__num').removeClass('sidebar__num_active');
-            $('.sidebar__num').eq(swiperContent.activeIndex).addClass('sidebar__num_active');
+            // $('.sidebar__num').removeClass('sidebar__num_active');
+            // $('.sidebar__num').eq(swiperContent.activeIndex).addClass('sidebar__num_active');
 
             var ggg = $('.content-slider .content-slide').eq(swiperContent.activeIndex);
             var yyy = $(ggg).find('.hideme').addClass('hideme_visible');
@@ -113,18 +113,37 @@ $(document).ready(function(){
     //     $('.preloader').addClass('preloader_hidden');
     // }, 1000);
     
+    $('.js-show-menu-lvl-2').click(function() {
+        var categoryInMenu = $(this).data('menu-lvl-2');
+        $('.menu-sidebar__caregory').removeClass('menu-sidebar__caregory_active').hide();
+        $('#'+categoryInMenu).addClass('menu-sidebar__caregory_active').fadeIn(300);
+
+        $('.sidebar__link').removeClass('sidebar__link_active');
+        $(this).addClass('sidebar__link_active');
+        $('.menu-sidebar').addClass('menu-sidebar_active');
+        $('.content').addClass('content_blurred');
+        $('.overlay_blur').fadeIn(300);
+    });
+
+    $('.js-close-menu-sidebar').click(function() {
+        $('.sidebar__link').removeClass('sidebar__link_active');
+        $('.menu-sidebar').removeClass('menu-sidebar_active');
+        $('.content').removeClass('content_blurred');
+        $('.overlay_blur').fadeOut(300);
+    });
+
 
     $('.content-slide').eq(0).find('.hideme').addClass('hideme_visible');
 
 
 
 
-    $('.js-slide-to-section').click(function() {
-        var slideTo = $(this).data('slide');
-        swiperContent.slideTo(slideTo-1);
-        $('.sidebar__num').removeClass('sidebar__num_active')
-        $('.sidebar__num').eq(slideTo-1).addClass('sidebar__num_active')
-    });
+    // $('.js-slide-to-section').click(function() {
+    //     var slideTo = $(this).data('slide');
+    //     swiperContent.slideTo(slideTo-1);
+    //     $('.sidebar__num').removeClass('sidebar__num_active')
+    //     $('.sidebar__num').eq(slideTo-1).addClass('sidebar__num_active')
+    // });
 
 
     var swiperHero = new Swiper('.js-hero-slider', {
@@ -151,16 +170,16 @@ $(document).ready(function(){
 
 
 
-    var swiperOne = new Swiper('.slider-one', {
+    var swiperOne = new Swiper('.slider-holder-one .swiper-container', {
       navigation: {
-        nextEl: '.slider-one .swiper-button-next',
-        prevEl: '.slider-one .swiper-button-prev',
+        nextEl: '.slider-holder-one .swiper-button-next',
+        prevEl: '.slider-holder-one .swiper-button-prev',
       },
     });
-    var swiperTwo = new Swiper('.slider-two', {
+    var swiperTwo = new Swiper('.slider-holder-two .swiper-container', {
       navigation: {
-        nextEl: '.slider-two .swiper-button-next',
-        prevEl: '.slider-two .swiper-button-prev',
+        nextEl: '.slider-holder-two .swiper-button-next',
+        prevEl: '.slider-holder-two .swiper-button-prev',
       },
     });
 
@@ -460,13 +479,16 @@ $(document).ready(function(){
         // $('.js-menu-controls').click(openMenu);
 
 
-        // $(document).on( 'keydown', function ( e ) {
-        //     if ( e.keyCode === 27 ) {
-        //         if ( $('.menu').hasClass('menu_active') ) {
-        //          openMenu();
-        //         }
-        //     }
-        // });
+        $(document).on( 'keydown', function ( e ) {
+            if ( e.keyCode === 27 ) {
+                if ( $('.menu-sidebar').hasClass('menu-sidebar_active') ) {
+                    $('.sidebar__link').removeClass('sidebar__link_active');
+                    $('.menu-sidebar').removeClass('menu-sidebar_active');
+                    $('.content').removeClass('content_blurred');
+                    $('.overlay_blur').fadeOut(300);
+                }
+            }
+        });
 
 
 
