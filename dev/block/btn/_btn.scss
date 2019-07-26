@@ -107,29 +107,28 @@ input.btn_main:visited {
 
 
 .btn-burger {
-	@include flex-row(wrap, flex-start, center);
-	width: 70px;
-	flex: 0 0 70px;
-	max-width: 70px; /*IE*/
-	height: 62px;
-	margin: 0 0 0 0;
+	@include flex-col(nowrap, center, center);
+	width: 140px;
+	flex: 0 0 140px;
+	max-width: 140px; /*IE*/
+	height: 140px;
+	margin: 0 0 40px 0;
 	cursor: pointer;
     transition: 200ms;
     padding: 16px 16px;
-
-	background-color: transparent;
-
 	&:hover {
-		.btn-burger__bar:nth-child(1) {width: 90%;}
-		.btn-burger__bar:nth-child(2) {width: 60%;	}
-		.btn-burger__bar:nth-child(3) {width: 85%;}
+		background-color: $color_main;
+		.btn-burger__bar {background: #fff;}
+		// .btn-burger__bar:nth-child(1) {background-color: #fff; width: 80px;}
+		// .btn-burger__bar:nth-child(2) {background-color: #fff; width: 60px;	}
+		// .btn-burger__bar:nth-child(3) {background-color: #fff; width: 75px;}
 
 	}
 }
 .btn-burger__bar {
-	width: 100%;
+	width: 50px;
     height: 2px;
-    margin-bottom: 0px;
+    margin-bottom: 12px;
 	background-color: $color_gray;
     transition: 300ms;
 

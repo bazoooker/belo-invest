@@ -7,7 +7,7 @@
 	height: 100%;
 	background-color: #fff;
 	// box-shadow: 0 0 35px 0 rgba(0,0,0,.07);
-	@include flex-col(wrap,center,flex-start);
+	@include flex-col(wrap,flex-start,flex-start);
 	transition: 300ms;
 }
 
