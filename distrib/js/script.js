@@ -1,101 +1,3 @@
- var swiperContent = new Swiper('.js-content-slider', {
-        slidesPerView: 'auto',
-      direction: 'vertical',
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      mousewheel: true,
-      on: {
-        slideChangeTransitionStart: function () {           
-
-            if (swiperContent.isEnd == false) {
-                anime({
-                  targets: '.sidebar',
-                  translateY: 0,
-                  easing: 'linear',
-                  duration: 100
-                });
-                $('.header').removeClass('header_last-section');
-                switch (swiperContent.activeIndex) {
-                    case 0:
-                        $('.header').removeClass('header_black');
-                        $('.sidebar').removeClass('sidebar_black sidebar_bg');
-                        break;
-                    case 1:
-                        $('.header').addClass('header_white').removeClass('header_black');
-                        $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-                        break;
-                    case 2:
-                        $('.header').addClass('header_black').removeClass('header_white');
-                        $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-                        break;
-                    case 3:
-                        $('.header').addClass('header_black').removeClass('header_white');
-                        $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-                        $('.counter').each(function() {
-                          var $this = $(this),
-                              countTo = $this.attr('data-count');
-                          $({ countNum: $this.text()}).animate({
-                            countNum: countTo
-                          },
-                          {
-                            duration: 1500,
-                            easing:'swing',
-                            step: function() {
-                              $this.text(Math.floor(this.countNum));
-                            },
-                            complete: function() {
-                              $this.text(this.countNum);
-                              anime({
-                                  targets: '.counter',
-                                  translateY: '-18px',
-                                  delay: anime.stagger(200) // increase delay by 100ms for each elements.
-                                });
-                            }
-
-                          });  
-                        });
-                        break;
-                    case 4:
-                        $('.header').addClass('header_white').removeClass('header_black');
-                        // $('.sidebar').addClass('sidebar_black').removeClass('sidebar_bg');
-                        break;
-                    case 5:
-                        $('.header').addClass('header_white').removeClass('header_black');
-                        // $('.sidebar').addClass('sidebar_black sidebar_bg');
-                        break;
-                    case 6:
-                        $('.header').removeClass('header_black').removeClass('header_white');
-                        $('.sidebar').removeClass('sidebar_black sidebar_bg');
-                        break;
-                    case 7:
-                        $('.header').addClass('header_black');
-                        $('.sidebar').addClass('sidebar_black');
-                        break;
-                    default:;
-                }
-            } else {
-                $('.header').addClass('header_last-section');
-                var footerHeight = $('.footer').height();
-                anime({
-                  targets: '.sidebar',
-                  translateY: -(footerHeight),
-                  easing: 'linear',
-                  duration: 100
-                });
-            }
-        },
-        slideChange: function() {
-            // $('.sidebar__num').removeClass('sidebar__num_active');
-            // $('.sidebar__num').eq(swiperContent.activeIndex).addClass('sidebar__num_active');
-
-            var ggg = $('.content-slider .content-slide').eq(swiperContent.activeIndex);
-            var yyy = $(ggg).find('.hideme').addClass('hideme_visible');
-        }
-      }
-    });
-
 
 
 $(window).scroll(function() {
@@ -147,22 +49,18 @@ $(document).ready(function(){
 
 
     var swiperHero = new Swiper('.js-hero-slider', {
-      pagination: {
-        el: '.js-hero-slider-progressbar',
-        type: 'progressbar',
-      },
-      mousewheel: true,
+      mousewheel: false,
       navigation: {
         nextEl: '.js-hero-slider-next',
         prevEl: '.js-hero-slider-prev',
       },
       on: {
         init: function() {
-            var heroSliderTotalSlides = $('.hero-slider .swiper-slide').length;
-            $('.hero-slider__total').html('0'+heroSliderTotalSlides);
+            // var heroSliderTotalSlides = $('.hero-slider .swiper-slide').length;
+            // $('.hero-slider__total').html('0'+heroSliderTotalSlides);
         },
          slideChange: function() {
-            $('.hero-slider__current').html('0'+(swiperHero.activeIndex+1));
+            // $('.hero-slider__current').html('0'+(swiperHero.activeIndex+1));
             // $('.sidebar__num').eq(swiperContent.activeIndex).addClass('sidebar__num_active');
         },
       }
@@ -176,6 +74,7 @@ $(document).ready(function(){
         prevEl: '.slider-holder-one .swiper-button-prev',
       },
     });
+
     var swiperTwo = new Swiper('.slider-holder-two .swiper-container', {
       navigation: {
         nextEl: '.slider-holder-two .swiper-button-next',
@@ -184,49 +83,24 @@ $(document).ready(function(){
     });
 
 
-// hero-slider__current
-// hero-slider__total
+    // slider-photo-small_1
 
-
-        // var swiper = new Swiper('.swiper-hero', {
-        //   pagination: {
-        //     el: '.swiper-pagination',
-        //     clickable: true,
-        //   },
-        // });
-
-
-
-        // var feedbackSwiper = new Swiper('.swiper-feedback', {
-        //   speed: 800,
-        //     navigation: {
-        //         nextEl: '.swiper-feedback__btn-next',
-        //         prevEl: '.swiper-feedback__btn-prev',
-        //     },
-        // });
+    // var swiperPhoto = new Swiper('.swiper-container', {
+    //     navigation: {
+    //         nextEl: ('.swiper-button-next'),
+    //         prevEl: ('.swiper-button-prev'),
+    //     },
+    // });
 
 
 
-        // var teachingSwiper = new Swiper('.swiper-teaching', {
-        //   speed: 300,
-        //   pagination: {
-        //     clickable: true,
-        //     el: '.teaching-pagination',
-        //   },
-        // });
-
-
-
-
-
-
-        // range slider in filters
-        // сайт плагина: 
-        // ionden.com/a/plugins/ion.rangeSlider/api.html
-
-
-
-
+    // var swiperPhoto = new Swiper('.slider-photo-small .swiper-container', {
+    //     self = $(this);
+    //     navigation: {
+    //         nextEl: ('.swiper-button-next'),
+    //         prevEl: ('.swiper-button-prev'),
+    //     },
+    // });
 
 
 

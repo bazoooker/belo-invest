@@ -1,0 +1,6 @@
+.hero-photo {
+	height: 100vh;
+	margin-bottom: 40px;
+	@include bg-cover;	
+	@include flex-row(nowrap,center,center);
+}

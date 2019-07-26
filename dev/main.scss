@@ -30,9 +30,11 @@
 @import "block/footer/footer";
 @import "block/content/content";
 @import "block/content-slider/content-slider";
+@import "block/slider-photo-small/slider-photo-small";
 @import "block/header-sticky/sticky-header";
 
 @import "block/hero/hero";
+@import "block/hero-photo/hero-photo";
 @import "block/section/section";
 
 @import "block/logo/logo";
@@ -104,7 +106,7 @@
 
 
 
-// @import "block/photo/photo";
+@import "block/photo/photo";
 // @import "block/pop-up-message/pop-up-message";
 // @import "block/product/product";
 // @import "block/product-category-list/product-category-list";
