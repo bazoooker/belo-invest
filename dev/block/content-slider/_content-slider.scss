@@ -4,3 +4,16 @@
 		@include bg-cover;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.swiper-container.content-slider {
+		& > .swiper-wrapper {
+			flex-direction: row;
+			flex-wrap: wrap;
+			.swiper-slide {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

@@ -61,26 +61,32 @@
 
 
 @media screen and (max-width: 1024px) {}
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {}
+@media screen and (max-width: 768px) {
 	.header {
-		background-color: #fff;
-		height: 10rem;
-		box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
-	}
-	.header__content {
-		@include flex-row(nowrap, space-between, center);
-	}
-	.header__menu-btn {
-		display: block;
-		margin-left: -14px;
-	}
-	.header__nav {
-		display: none;
-	}
-	.header__options {
-		flex: 1 1 10%;
+		height: 65px;
+		background-color: rgba(0,0,0,.3);
+		@include flex-row(nowrap,space-between,center);
+		.logo {
+			width: 65px;
+			background-size: 85%;
+			margin-left: 65px;
+		}
+		.socials {display: none;}
+		.contacts {
+			position: relative;
+			transform: none;
+			top: 0;
+			right: 0;
+		}
+		.link-phone {
+			margin-right: 15px;
+		}
 	}
 }
-@media screen and (max-width: 768px) {}
-@media screen and (max-width: 568px) {}
-@media screen and (max-width: 413px) {}
+@media screen and (max-width: 568px) {
+
+}
+@media screen and (max-width: 413px) {
+
+}

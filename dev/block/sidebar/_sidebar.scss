@@ -8,6 +8,7 @@
 	background-color: #fff;
 	// box-shadow: 0 0 35px 0 rgba(0,0,0,.07);
 	@include flex-col(wrap,flex-start,flex-start);
+	cursor: pointer;
 	transition: 300ms;
 }
 
@@ -41,7 +42,7 @@
 	span {
 		margin-bottom: auto;
 		display: block;
-		color: #4a4a4a;
+		color: #58bbb0;
 		font-weight: 600;
 		font-size: 14px;
 	}
@@ -53,51 +54,6 @@
 	}
 }
 
-// .sidebar__num {
-// 	position: relative;
-// 	color: #fff;
-// 	font-family: 'Russo One';
-// 	font-size: 15px;
-// 	padding: 1.9rem;
-// 	margin:  .5rem 0 .5rem 1rem;
-// 	cursor: pointer;
-// 	opacity: .85;
-// 	transition: 300ms;
-
-// 	&::before {
-// 		@include pseudo;
-// 		background-color: $color_main;
-// 		height: 5px;
-// 		width: 0;
-// 		bottom: 1.5rem;
-// 		left: 1.8rem;
-// 		transition: 300ms;
-// 		transition-delay: 0ms;
-// 	}
-// }
-
-// .sidebar__num:hover {
-// 	opacity: 1;
-// 	&::before {
-// 		width: 41px;
-// 		transition-delay: 150ms;
-// 	}
-// }
-
-// .sidebar__num_active {
-// 	font-size: 3rem;
-// }
-
-// .sidebar.sidebar_black {
-// 	border-right: 1px solid rgba(0,0,0,.3);
-// 	.sidebar__num {
-// 		color: $color_black !important;
-// 	}
-// }
-// .sidebar.sidebar_black.sidebar_bg {
-// 	background-color: rgba(255,255,255,.6);
-// }
-
 .sidebar__link_active {
 	background-color: whitesmoke;
 	&::before {
@@ -105,8 +61,46 @@
 	}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1400px) {
 	.sidebar {
+		width: 120px;
+	}
+	.sidebar__link {
+		height: 95px;
+		i {
+			width: 33px;
+			height: 33px;
+		}
+		span {
+			font-size: 13px;
+		}
+	}
+}
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1024px) {
+	.sidebar {
+		width: 110px;
+	}
+	.sidebar__link {
+		height: 85px;
+		i {
+			width: 30px;
+			height: 30px;
+		}
+		span {
+			font-size: 12px;
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	.sidebar {
+		width: 65px;
+		height: 65px;
+		background-color: transparent;
+	}
+	.sidebar__link {
 		display: none;
 	}
 }
+@media screen and (max-width: 568px) {}
+@media screen and (max-width: 413px) {}

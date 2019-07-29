@@ -35,6 +35,8 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     </head>
 
 
@@ -201,10 +203,6 @@
 
                     <div class="swiper-slide content-slide js-menu-white" style="background-image: url(/img/bg/bg-slide-1.jpg);">
                         <section class="section section_hero">
-                            <!-- <div class="section__video">
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZxE_1up9K3Y?rel=0&amp;loop=1&amp;mute=1&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay></iframe>
-                            </div> -->
-                            
                             <div class="container">
                                 <h1 class="text-center">Инвестиционный проект<br/>Белокуриха-2</h1>
                             </div> <!-- .container -->
@@ -252,7 +250,7 @@
                     </div> <!-- .swiper-slide -->
 
                     <div class="swiper-slide content-slide" style="background-image: url(/img/bg/bg-slide-4.jpg);" data-menu-color="black">
-                        <section class="section">
+                        <section class="section section_numbers">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">                                        
@@ -348,14 +346,88 @@
                             </div> <!-- .container -->
                         </section>
                     </div> <!-- .swiper-slide -->
+                    
 
+                    <div class="swiper-slide content-slide" style="background-color: red;" data-menu-color="white">
+                        <section class="section section_footer">
+                            <footer class="footer">
+                                <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Наши проекты</h3>
+                                                <a href="#" class="menu__link">Белокуриха-2</a>
+                                                <a href="#" class="menu__link">Белокуриха-3</a>
+                                                <a href="#" class="menu__link">Предгорье Алтая</a>
+                                                <a href="#" class="menu__link">Белокурихинский район</a>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Спортобъекты</h3>
+                                                <a href="#" class="menu__link">Горнолыжная трасса на Мишиной горе</a>
+                                                <a href="#" class="menu__link">Лыжно-биатлонный комплекс Алтайские горы</a>
+                                                <a href="#" class="menu__link">Горнолыжная трасса на горе Глухариной</a>
+                                                <a href="#" class="menu__link">Fun-клуб Мишина Гора</a>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Рестораны</h3>
+                                                <a href="#" class="menu__link">Ресторан &laquo;Гоголь&raquo;</a>
+                                                <a href="#" class="menu__link">Кафе &laquo;Бакхаус&raquo;</a>
+                                                <a href="#" class="menu__link">Кафе &laquo;Блинная&raquo;</a>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Контакты</h3>
+                                                <a href="#" class="menu__link">Для инвесторов</a>
+                                                <a href="#" class="menu__link">Контакты объектов</a>
+                                                <a href="#" class="menu__link">Как добраться</a>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Туробъекты</h3>
+                                                <a href="#" class="menu__link">Арт-объекты</a>
+                                                <a href="#" class="menu__link">Музей шоколада</a>
+                                                <a href="#" class="menu__link">Серпантин</a>
+                                                <a href="#" class="menu__link">Ступа медицины</a>
+                                                <a href="#" class="menu__link">Туристические маршруты</a>
+                                                <a href="#" class="menu__link">Вольфрамовый рудник</a>
+                                                <a href="#" class="menu__link">Андреевская слобода</a>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Пресс-центр</h3>
+                                                <a href="#" class="menu__link">Новости</a>
+                                                <a href="#" class="menu__link">Фото</a>
+                                                <a href="#" class="menu__link">Видео</a>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-40 hideme del200 hideme_right">
+                                                <h3>Инвестором</h3>
+                                                <a href="#" class="menu__link">Коммерческое предложение</a>
+                                                <a href="#" class="menu__link">Меморандум</a>
+                                                <a href="#" class="menu__link">СПА отель</a>
+                                                <a href="#" class="menu__link">Детокс отель</a>
+                                                <a href="#" class="menu__link">Карта инфраструктуры</a>
+                                                <a href="#" class="menu__link">Награды</a>
+                                                <a href="#" class="menu__link">Партнеры</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="footer__contacts">
+                                        <div class="container">
+                                            <p>&copy; Сеть санаториев &laquo;Белокуриха&raquo;</p>
+                                            <a href="http://e1media.ru">Разработка сайта &mdash; E1MEDIA</a>
+                                        </div>
+                                    </div>
+                            </footer>
+                        </section>
+                    </div> <!-- .swiper-slide -->
 
                     
 
 
                     
              </div>
+            
         </main>
+
+
+        
 
 
         <div class="menu">
@@ -430,17 +502,19 @@
 
 
         <div class="overlay overlay_blur js-close-menu-sidebar"></div>
-        <div class="pagination">
+       <!--  <div class="pagination">
             <span id="pagination__cur"></span>
             <span id="pagination__total"></span>
+        </div> -->
+
+
+
+        <div class="pagination">
+            <span class="pagination__current js-current-slide-number">01</span>/<span class="pagination__total js-total-slide-number">0</span>
         </div>
 
-
-
-        <div class="mobile-menu"></div>
-
         <!-- scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
         <script src="/js/tilt.jquery.min.js"></script>
         <script src="/js/anime.min.js"></script>
         <script src="/js/jquery.visible.min.js"></script>

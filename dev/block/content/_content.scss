@@ -18,3 +18,24 @@
 .content_blurred {
 	filter: blur(5px); 
 }
+
+
+
+@media screen and (max-width: 1400px) {
+	.content_pd-left {
+		padding-left: 120px;
+	}
+}
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1024px) {
+	.content_pd-left {
+		padding-left: 110px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.content_pd-left {
+		padding-left: 0px;
+	}
+}
+@media screen and (max-width: 568px) {}
+@media screen and (max-width: 413px) {}
