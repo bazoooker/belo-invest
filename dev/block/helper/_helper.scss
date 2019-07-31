@@ -7,6 +7,10 @@
 	}
 }
 
+.text-small {
+	font-size: .8em;
+}
+
 .h-hover-zoom {
 	transition: 450ms;
 	&:hover {
@@ -101,6 +105,9 @@
 	top: 0;
 }
 
+.bg-blue {
+	background-color: #08518a;
+}
 
 
 .h-bg-bigwave {
@@ -266,6 +273,7 @@
 		.mb-100 {margin-bottom: 80px !important;}
 		.mb-200 {margin-bottom: 165px !important;}
 		.pb-140 {padding-bottom: 105px !important;}
+
     }
     @media screen and (max-width: 568px) {
 		// .mb-20 	{margin-bottom: 10px !important;}
