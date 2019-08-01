@@ -1,3 +1,12 @@
+$(document).ready(function(){
+	$('.js-hero-slider-prev, .js-hero-slider-next').mouseenter(function(){
+		$(this).parent().find('.content-block').fadeOut();
+	});
+	$('.js-hero-slider-prev, .js-hero-slider-next').mouseleave(function(){
+		$(this).parent().find('.content-block').fadeIn();
+	});
+});
+
 var swiperContent = new Swiper('.js-content-slider', {
         slidesPerView: 'auto',
       direction: 'vertical',
@@ -169,6 +178,7 @@ $(document).ready(function(){
 
 
     var swiperHero = new Swiper('.js-hero-slider', {
+	loop: true,
       mousewheel: false,
       navigation: {
         nextEl: '.js-hero-slider-next',
@@ -199,6 +209,13 @@ $(document).ready(function(){
       navigation: {
         nextEl: '.slider-holder-two .swiper-button-next',
         prevEl: '.slider-holder-two .swiper-button-prev',
+      },
+    });
+
+    var swiperFullScreen = new Swiper('.objects-slider', {
+      navigation: {
+        nextEl: '.js-fullscr-slider-next',
+        prevEl: '.js-fullscr-slider-prev',
       },
     });
 

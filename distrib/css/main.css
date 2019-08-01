@@ -6478,6 +6478,79 @@ input.btn_main:visited:active {
     background-size: cover;
     background-repeat: no-repeat; }
 
+.fullscr-horiz-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%; }
+  .fullscr-horiz-slider .swiper-container {
+    height: 100%; }
+  .fullscr-horiz-slider .swiper-slide::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4); }
+  .fullscr-horiz-slider .swiper-button-next {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 0;
+    width: 52px;
+    height: 52px;
+    right: 0;
+    background: #00b787;
+    -webkit-transition: 400ms;
+    -o-transition: 400ms;
+    transition: 400ms; }
+  .fullscr-horiz-slider .swiper-button-prev {
+    position: absolute;
+    margin-top: 0;
+    width: 52px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 52px;
+    left: 0;
+    right: auto;
+    background: #00b787;
+    -webkit-transition: 400ms;
+    -o-transition: 400ms;
+    transition: 400ms; }
+
 @media screen and (max-width: 768px) {
   .swiper-container.content-slider > .swiper-wrapper {
     -webkit-box-orient: horizontal;

@@ -5,6 +5,56 @@
 	}
 }
 
+.fullscr-horiz-slider {
+	@include flex-row(nowrap,center,center);
+	height: 100%;
+
+	.swiper-container {
+		height: 100%;
+	}
+
+	.swiper-slide {
+		&::before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: rgba(0,0,0,.4);
+		}
+	}
+
+	.swiper-button-next {
+		position: absolute;
+	    display: flex;
+	    flex-flow: row nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    margin-top: 0;
+	    width: 52px;
+	    height: 52px;
+	    right: 0;
+	    background: #00b787;
+	    transition: 400ms;
+	}
+	.swiper-button-prev {
+		position: absolute;
+	    margin-top: 0;
+	    width: 52px;
+	    display: flex;
+	    flex-flow: row nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    height: 52px;
+	    left: 0;
+	    right: auto;
+	    background: #00b787;
+	    transition: 400ms;
+	}
+
+}
+
 @media screen and (max-width: 768px) {
 	.swiper-container.content-slider {
 		& > .swiper-wrapper {
