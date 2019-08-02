@@ -250,6 +250,50 @@
 	h2,h3,h4,h5,h6 {color: $color_main;}
 }
 
+
+
+.lookatme {
+	position: relative;
+    padding: 30px;
+    overflow: hidden;
+    background-color: #ffffff;
+    min-height: 220px;
+    height: 100%;
+    box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.15);
+    transition: 400ms;
+    &::before {
+		position: absolute;
+	    content: '';
+	    bottom: 0;
+	    right: 0;
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    background-color: #9ee8ff;
+	    transition: 400ms;
+	    transform: translateX(45px) translateY(25px);
+	    opacity: .2;
+    }
+    &:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 7px 30px 0 rgba(0,0,0,.25);
+    }
+    &:hover::before {
+		width: 200%;
+		height: 200%;
+		transform: translateX(50%) translateY(50%);
+    }
+}
+
+
+.innerpage {
+	h1,h2,h3,h4,h5 {
+		color: $color-main;
+		margin: 40px 0;
+	}
+}
+
+
 	@media screen and (max-width: 1200px) {
     	.hidden-to-xl {
     		display: none !important;

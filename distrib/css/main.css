@@ -443,8 +443,20 @@ a:visited {
     background-color: transparent; }
 
 .text-big {
-  font-size: 2.5rem;
+  font-size: 24px;
   line-height: 1.4; }
+  @media screen and (max-width: 1200px) {
+    .text-big {
+      font-size: 23px; } }
+  @media screen and (max-width: 992px) {
+    .text-big {
+      font-size: 22px; } }
+  @media screen and (max-width: 768px) {
+    .text-big {
+      font-size: 21px; } }
+  @media screen and (max-width: 568px) {
+    .text-big {
+      font-size: 20px; } }
   @media screen and (max-width: 1200px) {
     .text-big {
       line-height: 1.45; } }
@@ -5864,6 +5876,51 @@ html.lb-disable-scrolling {
   .content-block h2, .content-block h3, .content-block h4, .content-block h5, .content-block h6 {
     color: #30b3dc; }
 
+.lookatme {
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
+  background-color: #ffffff;
+  min-height: 220px;
+  height: 100%;
+  -webkit-box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms; }
+  .lookatme::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #9ee8ff;
+    -webkit-transition: 400ms;
+    -o-transition: 400ms;
+    transition: 400ms;
+    -webkit-transform: translateX(45px) translateY(25px);
+    -ms-transform: translateX(45px) translateY(25px);
+    transform: translateX(45px) translateY(25px);
+    opacity: .2; }
+  .lookatme:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+    -webkit-box-shadow: 0 7px 30px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 7px 30px 0 rgba(0, 0, 0, 0.25); }
+  .lookatme:hover::before {
+    width: 200%;
+    height: 200%;
+    -webkit-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    transform: translateX(50%) translateY(50%); }
+
+.innerpage h1, .innerpage h2, .innerpage h3, .innerpage h4, .innerpage h5 {
+  color: #30b3dc;
+  margin: 40px 0; }
+
 @media screen and (max-width: 1200px) {
   .hidden-to-xl {
     display: none !important; } }
@@ -6303,6 +6360,9 @@ input.btn_main:visited:active {
 
 .header.header_black .socials a {
   background-color: #00b787; }
+
+.innerpage .header {
+  display: none; }
 
 @media screen and (max-width: 768px) {
   .header {
